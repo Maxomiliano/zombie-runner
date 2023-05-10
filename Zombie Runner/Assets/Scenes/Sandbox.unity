@@ -123,11 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: 9a353922c014b1641b67d89a0cf3c4a3, type: 2}
---- !u!4 &168996922 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4135013735270702856, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
-  m_PrefabInstance: {fileID: 177460501}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &177460501
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -518,6 +513,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 9ae7f9f9eacff4142b21eb85ae606fdc, type: 3}
   m_PrefabInstance: {fileID: 925831275}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1302340159 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4135013735270702856, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+  m_PrefabInstance: {fileID: 177460501}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1378892228
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -761,7 +761,7 @@ PrefabInstance:
     - target: {fileID: 8762286023885395323, guid: 9c489a8547f4d9e4387da15a4ff82c81, type: 3}
       propertyPath: m_Follow
       value: 
-      objectReference: {fileID: 168996922}
+      objectReference: {fileID: 1302340159}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c489a8547f4d9e4387da15a4ff82c81, type: 3}
 --- !u!1001 &1735637680
@@ -869,7 +869,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 2
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -969,3 +969,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 476365969}
+  _chaseRange: 5
