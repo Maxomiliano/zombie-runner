@@ -3,23 +3,33 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 
-public class Weapon : MonoBehaviour
+public class Weapon : MonoBehaviour //IPointerClickHandler
 {
     [SerializeField] Camera FPCamera;
     [SerializeField] float range = 100f;
     [SerializeField] float damage = 30f;
     [SerializeField] ParticleSystem muzzleFlash;
+    [SerializeField] GameObject hitEffect;
 
     void Update()
     {
+        /*
         if (Input.GetButtonDown("Fire1"))
         {
             Shoot();
         }
+        */
+        Mouse ms = InputSystem.GetDevice<Mouse>();
+
+        if (ms.leftButton.wasPressedThisFrame) { Shoot(); }
+
     }
 
-    private void Shoot()
+
+    private void Shoot() //I'll made this public bc i'm calling it from FirstPersonController.cs
     {
         PlayMuzzleFlash();
         ProcessRaycast();
@@ -35,8 +45,8 @@ public class Weapon : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(FPCamera.transform.position, FPCamera.transform.forward, out hit, range))
         {
-            Debug.Log("I hit this thing: " + hit.transform.name);
-            //TODO: add some hit effect for visual players
+
+            CreateHitImpact(hit);
             EnemyHealth target = hit.transform.GetComponent<EnemyHealth>();
             if (target == null) return;
             // call a method on EnemyHealth that decreases the enemy's health
@@ -47,4 +57,17 @@ public class Weapon : MonoBehaviour
             return;
         }
     }
+
+    private void CreateHitImpact(RaycastHit hit)
+    {
+        GameObject impact = Instantiate(hitEffect, hit.point, Quaternion.LookRotation(hit.normal));
+        Destroy(impact, 0.1f);
+    }
+
+    /*
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        Shoot();
+    }
+    */
 }

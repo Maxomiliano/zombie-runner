@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 #if ENABLE_INPUT_SYSTEM
 using UnityEngine.InputSystem;
@@ -12,6 +13,7 @@ namespace StarterAssets
 		public Vector2 look;
 		public bool jump;
 		public bool sprint;
+		public bool shoot;
 
 		[Header("Movement Settings")]
 		public bool analogMovement;
@@ -45,8 +47,17 @@ namespace StarterAssets
 		}
 #endif
 
+		public void OnShoot(InputValue value)
+		{
+			ShootInput(value.isPressed);
+		}
 
-		public void MoveInput(Vector2 newMoveDirection)
+        private void ShootInput(bool newShootState)
+        {
+			shoot = newShootState;
+        }
+
+        public void MoveInput(Vector2 newMoveDirection)
 		{
 			move = newMoveDirection;
 		} 

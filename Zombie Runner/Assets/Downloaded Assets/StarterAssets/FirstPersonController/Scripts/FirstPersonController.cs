@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 #if ENABLE_INPUT_SYSTEM
 using UnityEngine.InputSystem;
 #endif
@@ -95,8 +96,11 @@ namespace StarterAssets
 			}
 		}
 
+		//private Weapon _weapon;
+
 		private void Start()
 		{
+			//_weapon = GetComponent<Weapon>();
 			_controller = GetComponent<CharacterController>();
 			_input = GetComponent<StarterAssetsInputs>();
 #if ENABLE_INPUT_SYSTEM
@@ -115,9 +119,22 @@ namespace StarterAssets
 			JumpAndGravity();
 			GroundedCheck();
 			Move();
+			//Shoot();
 		}
 
-		private void LateUpdate()
+		/*
+        private void Shoot()
+        {
+            if (_input.shoot)
+			{
+				_weapon.Shoot();
+				_input.shoot = false;
+				Debug.Log("shoot");
+			}
+        }
+		*/
+
+        private void LateUpdate()
 		{
 			CameraRotation();
 		}
