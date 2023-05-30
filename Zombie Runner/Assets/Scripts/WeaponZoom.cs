@@ -20,11 +20,12 @@ public class WeaponZoom : MonoBehaviour
 
     bool zoomedInToggle = false;
 
-
+    /*
     public void Zoom(bool zoomedIn)
     {
         camera.m_Lens.FieldOfView = zoomedIn ? zoomedInFOV : defaultFOV;
     }
+    */
 
     /*
     public void Zoom(bool valueIsPressed)
@@ -45,4 +46,17 @@ public class WeaponZoom : MonoBehaviour
         }
     }
     */
+    public void Zoom(bool valueIsPressed)
+    {
+        if (zoomedInToggle == false)
+        {
+            zoomedInToggle = true;
+            camera.m_Lens.FieldOfView = zoomedInFOV;
+        }
+        else
+        {
+            zoomedInToggle = false;
+            camera.m_Lens.FieldOfView = defaultFOV;
+        }
+    }
 }

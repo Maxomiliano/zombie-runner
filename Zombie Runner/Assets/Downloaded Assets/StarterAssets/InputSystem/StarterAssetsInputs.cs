@@ -25,11 +25,6 @@ namespace StarterAssets
 		public bool cursorLocked = true;
 		public bool cursorInputForLook = true;
 
-		/*
-        [SerializeField] private CinemachineVirtualCamera camera;
-        [SerializeField] private float defaultFOV = 40;
-        [SerializeField] private float zoomedInFOV = 15;
-		*/
 #if ENABLE_INPUT_SYSTEM
         public void OnMove(InputValue value)
 		{
