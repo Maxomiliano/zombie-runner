@@ -1,3 +1,4 @@
+using Cinemachine;
 using System;
 using UnityEngine;
 #if ENABLE_INPUT_SYSTEM
@@ -6,7 +7,9 @@ using UnityEngine.InputSystem;
 
 namespace StarterAssets
 {
-	public class StarterAssetsInputs : MonoBehaviour
+    [RequireComponent(typeof(WeaponZoom))]
+
+    public class StarterAssetsInputs : MonoBehaviour
 	{
 		[Header("Character Input Values")]
 		public Vector2 move;
@@ -22,8 +25,13 @@ namespace StarterAssets
 		public bool cursorLocked = true;
 		public bool cursorInputForLook = true;
 
+		/*
+        [SerializeField] private CinemachineVirtualCamera camera;
+        [SerializeField] private float defaultFOV = 40;
+        [SerializeField] private float zoomedInFOV = 15;
+		*/
 #if ENABLE_INPUT_SYSTEM
-		public void OnMove(InputValue value)
+        public void OnMove(InputValue value)
 		{
 			MoveInput(value.Get<Vector2>());
 		}
@@ -45,9 +53,20 @@ namespace StarterAssets
 		{
 			SprintInput(value.isPressed);
 		}
+        public void OnZoom(InputValue value)
+        {
+            ZoomInput(value.isPressed);
+        }
+        private void ZoomInput(bool valueIsPressed)
+        {
+            WeaponZoom weaponZoom = GetComponent<WeaponZoom>();
+            weaponZoom.Zoom(valueIsPressed);
+        }
+
 #endif
 
-		public void OnShoot(InputValue value)
+
+        public void OnShoot(InputValue value)
 		{
 			ShootInput(value.isPressed);
 		}

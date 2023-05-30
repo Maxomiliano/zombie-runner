@@ -12,6 +12,8 @@ public class EnemyHealth : MonoBehaviour
     //Create a public method wich reduces hitpoints by the amount of damage
     public void TakeDamage(float damage)
     {
+        BroadcastMessage("OnDamageTaken");
+
         hitPoints -= damage;
 
         if (hitPoints <= 0)

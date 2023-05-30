@@ -134,6 +134,14 @@ PrefabInstance:
       propertyPath: FPCamera
       value: 
       objectReference: {fileID: 1602725933}
+    - target: {fileID: 8384834217665300410, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: gameOverCanvas
+      value: 
+      objectReference: {fileID: 964382522}
+    - target: {fileID: 8475856748503965243, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: camera
+      value: 
+      objectReference: {fileID: 254219095}
     - target: {fileID: 8616685848737228372, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: m_Name
       value: PlayerCapsule
@@ -184,6 +192,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+--- !u!114 &254219095 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8762286023885395323, guid: 9c489a8547f4d9e4387da15a4ff82c81, type: 3}
+  m_PrefabInstance: {fileID: 1613379887}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &366835186
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1429,7 +1448,7 @@ Camera:
   m_FOVAxisMode: 0
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
+  m_FocalLength: 32.96973
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -1615,10 +1634,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4229809714669014239, guid: f3816c15df15b9942a9124a1a617c396, type: 3}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 476365969}
     - target: {fileID: 7673105404124422080, guid: f3816c15df15b9942a9124a1a617c396, type: 3}
       propertyPath: _target
       value: 
@@ -1626,10 +1641,6 @@ PrefabInstance:
     - target: {fileID: 7673105404124422081, guid: f3816c15df15b9942a9124a1a617c396, type: 3}
       propertyPath: m_RootOrder
       value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 7673105404124422081, guid: f3816c15df15b9942a9124a1a617c396, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7673105404124422081, guid: f3816c15df15b9942a9124a1a617c396, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1670,10 +1681,6 @@ PrefabInstance:
     - target: {fileID: 7673105404124422081, guid: f3816c15df15b9942a9124a1a617c396, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7673105404124422085, guid: f3816c15df15b9942a9124a1a617c396, type: 3}
-      propertyPath: m_StoppingDistance
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7673105404124422090, guid: f3816c15df15b9942a9124a1a617c396, type: 3}
       propertyPath: m_Name
