@@ -13,6 +13,7 @@ public class Weapon : MonoBehaviour //IPointerClickHandler
     [SerializeField] float damage = 30f;
     [SerializeField] ParticleSystem muzzleFlash;
     [SerializeField] GameObject hitEffect;
+    [SerializeField] Ammo ammoSlot;
 
     void Update()
     {
@@ -24,15 +25,22 @@ public class Weapon : MonoBehaviour //IPointerClickHandler
         */
         Mouse ms = InputSystem.GetDevice<Mouse>();
 
-        if (ms.leftButton.wasPressedThisFrame) { Shoot(); }
+        if (ms.leftButton.wasPressedThisFrame) 
+        {
+            Shoot();        
+        }
 
     }
 
 
-    private void Shoot() //I'll made this public bc i'm calling it from FirstPersonController.cs
+    private void Shoot()
     {
+        if (ammoSlot.GetCurrentAmmo() > 0)
+        {
         PlayMuzzleFlash();
         ProcessRaycast();
+        ammoSlot.ReduceCurrentAmmo();
+        }
     }
 
     private void PlayMuzzleFlash()

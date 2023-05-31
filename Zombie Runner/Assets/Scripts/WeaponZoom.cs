@@ -1,4 +1,5 @@
 using Cinemachine;
+using StarterAssets;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -9,16 +10,44 @@ using UnityEngine.InputSystem;
 
 public class WeaponZoom : MonoBehaviour
 {
+    [SerializeField] private CinemachineVirtualCamera camera;
+    [SerializeField] private float defaultFOV = 40;
+    [SerializeField] private float zoomedInFOV = 15;
+    [SerializeField] float zoomOutSensitivity = 2f;
+    [SerializeField] float zoomInSensitivity = .5f;
+
+    FirstPersonController fpsController;
+    bool zoomedInToggle = false;
+
+    private void Start()
+    {
+        fpsController = GetComponent<FirstPersonController>();
+    }
+
+    public void Zoom(bool valueIsPressed)
+    {
+        if (zoomedInToggle == false)
+        {
+            zoomedInToggle = true;
+            camera.m_Lens.FieldOfView = zoomedInFOV;
+            fpsController.RotationSpeed = zoomInSensitivity;
+        }
+        else
+        {
+            zoomedInToggle = false;
+            camera.m_Lens.FieldOfView = defaultFOV;
+            fpsController.RotationSpeed = zoomOutSensitivity;
+        }
+
+
+
+
+
     /*
     [SerializeField] Camera fpsCamera;
     [SerializeField] float zoomedInFOV = 60f;
     [SerializeField] float zoomedOutFOV = 40f;
     */
-    [SerializeField] private CinemachineVirtualCamera camera;
-    [SerializeField] private float defaultFOV = 40;
-    [SerializeField] private float zoomedInFOV = 15;
-
-    bool zoomedInToggle = false;
 
     /*
     public void Zoom(bool zoomedIn)
@@ -46,17 +75,5 @@ public class WeaponZoom : MonoBehaviour
         }
     }
     */
-    public void Zoom(bool valueIsPressed)
-    {
-        if (zoomedInToggle == false)
-        {
-            zoomedInToggle = true;
-            camera.m_Lens.FieldOfView = zoomedInFOV;
-        }
-        else
-        {
-            zoomedInToggle = false;
-            camera.m_Lens.FieldOfView = defaultFOV;
-        }
     }
 }
