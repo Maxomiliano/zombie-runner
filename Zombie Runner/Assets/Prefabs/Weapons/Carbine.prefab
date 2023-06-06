@@ -261,7 +261,8 @@ GameObject:
   - component: {fileID: 2337074158996965286}
   - component: {fileID: 2337074159000356742}
   - component: {fileID: 2337074158999389510}
-  - component: {fileID: 1827654535623159279}
+  - component: {fileID: 5379692676562129078}
+  - component: {fileID: 1951961969192762673}
   m_Layer: 0
   m_Name: Carbine
   m_TagString: Untagged
@@ -340,7 +341,25 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &1827654535623159279
+--- !u!114 &5379692676562129078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2337074158997199750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2beaf34cdbe3aba46b3bf821d41d3d80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camera: {fileID: 0}
+  defaultFOV: 40
+  zoomedInFOV: 15
+  zoomOutSensitivity: 2
+  zoomInSensitivity: 0.5
+  fpsController: {fileID: 0}
+--- !u!114 &1951961969192762673
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -355,9 +374,10 @@ MonoBehaviour:
   FPCamera: {fileID: 0}
   range: 100
   damage: 30
-  muzzleFlash: {fileID: 0}
-  hitEffect: {fileID: 0}
+  muzzleFlash: {fileID: 1893824288649051280}
+  hitEffect: {fileID: 4110741514436446566, guid: a20e393e03ced8e4e83dd0b393beb7b2, type: 3}
   ammoSlot: {fileID: 0}
+  timeBetweenShots: 0
 --- !u!1 &2337074158997199752
 GameObject:
   m_ObjectHideFlags: 0
@@ -703,5 +723,10 @@ PrefabInstance:
 --- !u!4 &440677239524498399 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3350055855090824723, guid: 4a60d8477aafac045a1f56d3a60c7813, type: 3}
+  m_PrefabInstance: {fileID: 2909417238665817548}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &1893824288649051280 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 3614249443508621660, guid: 4a60d8477aafac045a1f56d3a60c7813, type: 3}
   m_PrefabInstance: {fileID: 2909417238665817548}
   m_PrefabAsset: {fileID: 0}

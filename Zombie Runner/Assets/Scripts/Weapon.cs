@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
-public class Weapon : MonoBehaviour //IPointerClickHandler
+public class Weapon : MonoBehaviour
 {
     [SerializeField] Camera FPCamera;
     [SerializeField] float range = 100f;
@@ -14,33 +14,33 @@ public class Weapon : MonoBehaviour //IPointerClickHandler
     [SerializeField] ParticleSystem muzzleFlash;
     [SerializeField] GameObject hitEffect;
     [SerializeField] Ammo ammoSlot;
+    [SerializeField] float timeBetweenShots;
+
+    bool canShoot = true;
 
     void Update()
     {
-        /*
-        if (Input.GetButtonDown("Fire1"))
-        {
-            Shoot();
-        }
-        */
         Mouse ms = InputSystem.GetDevice<Mouse>();
 
-        if (ms.leftButton.wasPressedThisFrame) 
+        if (ms.leftButton.wasPressedThisFrame && canShoot == true) 
         {
-            Shoot();        
+           StartCoroutine(Shoot());       
         }
 
     }
 
 
-    private void Shoot()
+    IEnumerator Shoot()
     {
+        canShoot = false;
         if (ammoSlot.GetCurrentAmmo() > 0)
         {
         PlayMuzzleFlash();
         ProcessRaycast();
         ammoSlot.ReduceCurrentAmmo();
         }
+        yield return new WaitForSeconds(timeBetweenShots);
+        canShoot = true;
     }
 
     private void PlayMuzzleFlash()
@@ -71,11 +71,4 @@ public class Weapon : MonoBehaviour //IPointerClickHandler
         GameObject impact = Instantiate(hitEffect, hit.point, Quaternion.LookRotation(hit.normal));
         Destroy(impact, 0.1f);
     }
-
-    /*
-    public void OnPointerClick(PointerEventData eventData)
-    {
-        Shoot();
-    }
-    */
 }

@@ -134,14 +134,34 @@ PrefabInstance:
       propertyPath: FPCamera
       value: 
       objectReference: {fileID: 1602725933}
+    - target: {fileID: 1765842059, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: timeBetweenShots
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 487315218754958146, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 605880429807600770, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1294136961462625617, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4448286620793984501, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: FPCamera
+      value: 
+      objectReference: {fileID: 1602725933}
+    - target: {fileID: 7601419173026651148, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: camera
+      value: 
+      objectReference: {fileID: 254219095}
+    - target: {fileID: 7783697831877130354, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: camera
+      value: 
+      objectReference: {fileID: 254219095}
     - target: {fileID: 8384834217665300410, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: gameOverCanvas
       value: 
@@ -150,6 +170,10 @@ PrefabInstance:
       propertyPath: camera
       value: 
       objectReference: {fileID: 254219095}
+    - target: {fileID: 8607417534065848841, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: currentWeapon
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8616685848737228372, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: m_Name
       value: PlayerCapsule

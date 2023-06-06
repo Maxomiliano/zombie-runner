@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 
 namespace StarterAssets
 {
-    [RequireComponent(typeof(WeaponZoom))]
+    //[RequireComponent(typeof(WeaponZoom))]
 
     public class StarterAssetsInputs : MonoBehaviour
 	{
@@ -54,8 +54,11 @@ namespace StarterAssets
         }
         private void ZoomInput(bool valueIsPressed)
         {
-            WeaponZoom weaponZoom = GetComponent<WeaponZoom>();
+            WeaponZoom weaponZoom = GetComponentInChildren<WeaponZoom>();
+			if (weaponZoom != null)
+			{
             weaponZoom.Zoom(valueIsPressed);
+			}
         }
 
 #endif
