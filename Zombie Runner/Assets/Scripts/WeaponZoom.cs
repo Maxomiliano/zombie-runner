@@ -18,57 +18,35 @@ public class WeaponZoom : MonoBehaviour
     [SerializeField] FirstPersonController fpsController;
 
     bool zoomedInToggle = false;
+    private void OnDisable()
+    {
+        ZoomOut();
+    }
 
     public void Zoom(bool valueIsPressed)
     {
+
         if (zoomedInToggle == false)
         {
-            zoomedInToggle = true;
-            camera.m_Lens.FieldOfView = zoomedInFOV;
-            fpsController.RotationSpeed = zoomInSensitivity;
+            ZoomIn();
         }
         else
         {
-            zoomedInToggle = false;
-            camera.m_Lens.FieldOfView = defaultFOV;
-            fpsController.RotationSpeed = zoomOutSensitivity;
-        }
-
-
-
-
-
-    /*
-    [SerializeField] Camera fpsCamera;
-    [SerializeField] float zoomedInFOV = 60f;
-    [SerializeField] float zoomedOutFOV = 40f;
-    */
-
-    /*
-    public void Zoom(bool zoomedIn)
-    {
-        camera.m_Lens.FieldOfView = zoomedIn ? zoomedInFOV : defaultFOV;
-    }
-    */
-
-    /*
-    public void Zoom(bool valueIsPressed)
-    {
-        Mouse mouse = InputSystem.GetDevice<Mouse>();
-        if (mouse.rightButton.wasPressedThisFrame)
-        {
-            if (zoomedInToggle == false)
-            {
-                zoomedInToggle = true;
-                fpsCamera.fieldOfView = zoomedInFOV;
-            }
-            else
-            {
-                zoomedInToggle = false;
-                fpsCamera.fieldOfView = zoomedOutFOV;
-            }
+            ZoomOut();
         }
     }
-    */
+
+    private void ZoomOut()
+    {
+        zoomedInToggle = false;
+        camera.m_Lens.FieldOfView = defaultFOV;
+        fpsController.RotationSpeed = zoomOutSensitivity;
+    }
+
+    private void ZoomIn()
+    {
+        zoomedInToggle = true;
+        camera.m_Lens.FieldOfView = zoomedInFOV;
+        fpsController.RotationSpeed = zoomInSensitivity;
     }
 }

@@ -150,10 +150,42 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2938146002438722360, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: ammoType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4448286620793984501, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: FPCamera
       value: 
       objectReference: {fileID: 1602725933}
+    - target: {fileID: 4868306136768224020, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: ammoSlots.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4868306136768224020, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: ammoSlots.Array.data[0].ammotype
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4868306136768224020, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: ammoSlots.Array.data[1].ammotype
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4868306136768224020, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: ammoSlots.Array.data[2].ammotype
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4868306136768224020, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: ammoSlots.Array.data[0].ammoAmount
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4868306136768224020, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: ammoSlots.Array.data[1].ammoAmount
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4868306136768224020, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: ammoSlots.Array.data[2].ammoAmount
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7601419173026651148, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: camera
       value: 
