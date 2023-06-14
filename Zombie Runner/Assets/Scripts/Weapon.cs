@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -16,6 +17,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] Ammo ammoSlot;
     [SerializeField] AmmoType ammoType;
     [SerializeField] float timeBetweenShots;
+    [SerializeField] TextMeshProUGUI ammoText;
 
     bool canShoot = true;
 
@@ -26,6 +28,8 @@ public class Weapon : MonoBehaviour
 
     void Update()
     {
+        DisplayAmmo(); //We call this in this .cs because the weapon knows how much ammo we have
+
         Mouse ms = InputSystem.GetDevice<Mouse>();
 
         if (ms.leftButton.wasPressedThisFrame && canShoot == true) 
@@ -35,6 +39,11 @@ public class Weapon : MonoBehaviour
 
     }
 
+    private void DisplayAmmo()
+    {
+        int currentAmmo = ammoSlot.GetCurrentAmmo(ammoType);
+        ammoText.text = currentAmmo.ToString();
+    }
 
     IEnumerator Shoot()
     {
